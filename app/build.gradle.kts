@@ -40,7 +40,10 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.retrofit.converter)
+    implementation(libs.retrofit)
+    implementation(libs.coroutine.core)
+    implementation(libs.coroutine.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -1,4 +1,4 @@
-package com.androidexercises.recipesapp.ui.theme
+package com.androidexercises.recipesapp.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
