@@ -1,4 +1,6 @@
 package com.androidexercises.recipesapp.presentation.destinations
 
-object RecipeDetailsDestination {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+internal data object RecipeDetailsDestination
