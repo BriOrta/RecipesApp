@@ -20,7 +20,9 @@ import com.androidexercises.recipesapp.presentation.recipeDetails.RecipeDetailsS
 import com.androidexercises.recipesapp.presentation.recipeFinder.RecipeFinderScreen
 import com.androidexercises.recipesapp.presentation.recipeList.RecipeListScreen
 import com.androidexercises.recipesapp.presentation.theme.RecipesAppTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +41,14 @@ class RecipesActivity : ComponentActivity() {
 
 @Composable
 fun RecipesNavHost(modifier: Modifier = Modifier) {
+    val navController = rememberNavController()
     NavHost(
         modifier = modifier,
-        navController = rememberNavController(),
+        navController = navController,
         startDestination = RecipeDetailsDestination
     ){
         composable<RecipeDetailsDestination>{
-            RecipeDetailsScreen()
+            RecipeDetailsScreen(navController = navController)
         }
 
         composable<RecipeListDestination>{
