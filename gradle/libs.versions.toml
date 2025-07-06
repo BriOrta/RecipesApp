@@ -1,19 +1,21 @@
 [versions]
 agp = "8.12.0-alpha03"
-kotlin = "2.0.21"
+kotlin = "2.2.0"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-kotlinxSerializationJson = "1.8.1"
-lifecycleRuntimeKtx = "2.9.0"
+kotlinxSerializationJson = "1.9.0"
+lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
-composeBom = "2024.09.00"
+composeBom = "2025.06.01"
 retrofit = "3.0.0"
 coroutines = "1.10.2"
-navigationComposeAndroid = "2.9.0"
-hilt = "1.2.0"
-kotlinSerializationPlugin = "1.9.20"
+navigationComposeAndroid = "2.9.1"
+hilt-navigation = "1.2.0"
+kotlinSerializationPlugin = "2.2.0"
+ksp = "2.1.21-RC-2.0.0"
+daggerHilt = "2.56.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,11 +41,15 @@ coroutine-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-c
 coroutine-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
 androidx-navigation-compose-android = { group = "androidx.navigation", name = "navigation-compose-android", version.ref = "navigationComposeAndroid" }
 # Hilt
-androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerHilt" }
 
 [plugins]
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerializationPlugin"}
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

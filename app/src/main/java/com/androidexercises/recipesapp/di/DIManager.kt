@@ -1,6 +1,7 @@
 package com.androidexercises.recipesapp.di
 
 import com.androidexercises.recipesapp.data.RecipeDao
+import com.androidexercises.recipesapp.data.RecipeDaoImpl
 import com.androidexercises.recipesapp.data.RecipeRepositoryImpl
 import com.androidexercises.recipesapp.domain.repository.RecipeRepository
 import com.androidexercises.recipesapp.domain.usecases.GetRecipesUseCase
@@ -13,6 +14,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class DIManager {
+
+    @Provides
+    @Singleton
+    fun provideRecipeDao(): RecipeDao {
+        return RecipeDaoImpl()
+    }
 
     @Provides
     @Singleton

@@ -5,9 +5,8 @@ import com.androidexercises.recipesapp.domain.repository.RecipeRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class RecipeDaoImpl(
-    val retrofitHelper : RetrofitHelper
-) : RecipeDao {
+class RecipeDaoImpl() : RecipeDao {
+    val retrofitHelper : RetrofitHelper = RetrofitHelper
 
     override suspend fun getRecipes(): List<Recipe> {
         val retrofit = retrofitHelper.getRetrofit()
